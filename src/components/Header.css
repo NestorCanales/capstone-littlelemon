@@ -1,0 +1,62 @@
+header {
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto; /* This centers the header */
+    display: flex;
+    justify-content: space-around; /* This will keep space around the items but closer together */
+    align-items: center;
+    padding: 20px;
+    background: #F4CE14; /* Example background color */
+}
+
+header section {
+    width: 100%; /* Ensures the section takes up the full width of the header */
+    display: flex;
+    justify-content: space-around; /* Space around but closer together */
+    align-items: center;
+}
+
+.left-content, .right-content {
+    flex: 1; /* This will allow both children to grow and take up equal space */
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left */
+    /* Any additional styling for the left content */
+}
+
+.right-content img {
+    border-radius: 15px; /* Rounded corners for the image */
+    width: 100%; /* Make the image responsive */
+    max-width: 50%; /* Limit the image width */
+    max-height: 300px; /* Adjust based on your design */
+    object-fit: cover; /* Cover the space without stretching */
+}
+
+/* Button styles */
+.button-reserve {
+    background: #495E57; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content, .right-content {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .right-content {
+        margin-top: 20px; /* Space between text and image on smaller screens */
+    }
+}

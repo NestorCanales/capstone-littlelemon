@@ -1,0 +1,89 @@
+/* Base styles for the navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo on the left, menu on the right */
+    background: #ffffff; /* Adjust the color to match your design */
+    padding: 1rem; /* Adjust the padding to match your design */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* Styles for the hamburger menu */
+.hamburger {
+    display: none; /* Hidden on desktop by default */
+    cursor: pointer;
+    /* Additional styling for the hamburger button */
+}
+
+/* Styles for the menu list */
+.menu {
+    list-style-type: none; /* Removes bullet points from list */
+    margin: 0;
+    padding: 0;
+    display: none; /* Hidden by default */
+}
+
+/* Styles for menu items */
+.menu li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #333333; /* Adjust the color to match your design */
+    padding: 0.5rem 1rem; /* Adjust the padding to match your design */
+    display: block;
+}
+
+/* Styles when the mobile menu is open */
+.menu.open {
+    display: block; /* Shows the menu */
+    position: absolute; /* Positions the menu below the navbar */
+    top: 75px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff; /* Adjust the color to match your design */
+    border-top: 1px solid #dddddd; /* Adds a border top for a clear separation */
+    width: 100%;
+}
+
+.menu.open li {
+    padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+/* Media query for desktop styles */
+@media screen and (min-width: 768px) {
+    /* Desktop styles for the hamburger menu */
+    .hamburger {
+        display: none; /* Ensures the hamburger is not shown on desktop */
+    }
+
+    /* Desktop styles for the menu list */
+    .menu {
+        display: flex; /* Lays out the menu items horizontally */
+        justify-content: flex-end; /* Aligns the menu items to the right */
+    }
+
+    /* Desktop styles for menu items */
+    .menu li {
+        margin: 0 0.5rem; /* Adds some margin between menu items */
+    }
+
+    /* Ensures the menu takes full width on desktop */
+    .menu li a {
+        padding: 0.5rem 1rem; /* Consistent padding with mobile */
+    }
+
+    /* This ensures that the menu is visible on desktop after resizing */
+    .menu.open {
+        position: static; /* Resets position to default */
+        display: flex;
+        flex-direction: row;
+        width: auto; /* Resets width to auto */
+        border-top: none; /* Removes the border top */
+    }
+}
+
+/* Show the hamburger menu on mobile */
+@media screen and (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+}
