@@ -6,6 +6,7 @@
     background: #ffffff; /* Adjust the color to match your design */
     padding: 1rem; /* Adjust the padding to match your design */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    /* Add spacing to the left and right of the navbar */
 }
 
 /* Styles for the hamburger menu */

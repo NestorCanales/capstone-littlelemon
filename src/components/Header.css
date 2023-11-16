@@ -1,62 +1,78 @@
+/* Apply a global reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
-    max-width: 1200px; /* Adjust this value as needed */
-    margin: 0 auto; /* This centers the header */
+    background-color: #495E57; /* Replace with the actual color code for the header background */
     display: flex;
-    justify-content: space-around; /* This will keep space around the items but closer together */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: #F4CE14; /* Example background color */
+    padding: 20px 10%; /* Adjust the padding to ensure elements are away from the edges */
+    height: auto;
+    object-position: center; /* Center the image within the element's box */
 }
 
-header section {
-    width: 100%; /* Ensures the section takes up the full width of the header */
-    display: flex;
-    justify-content: space-around; /* Space around but closer together */
-    align-items: center;
-}
-
-.left-content, .right-content {
-    flex: 1; /* This will allow both children to grow and take up equal space */
+.left-content h2, 
+.left-content h3, 
+.left-content p {
+    margin-bottom: 0.5em; /* Provides spacing between text elements */
 }
 
 .left-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns items to the left */
-    /* Any additional styling for the left content */
+    flex: 0 0 50%; /* Do not grow or shrink, start at 50% of the header width */
+    /* Other styling for left-content */
+}
+
+.right-content {
+    flex: 1; /* Will take the remaining space */
+    display: flex; /* Ensure this is a flex container if you want to align the image vertically */
+    align-items: center; /* This will vertically center the image in the right-content */
+    justify-content: center; /* This will horizontally center the image in the right-content */
+    padding-left: 10%; /* Add some padding if you want to maintain a gap between the text and image */
+}
+
+.button-reserve {
+    background-color: #F4CE14; /* Replace with actual color code */
+    border: none;
+    padding: 10px 20px; /* Adjust padding to fit the text */
+    color: #000000; /* Replace with actual color code */
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-reserve:hover {
+    background-color: #888888; /* Replace with actual color code for hover state */
 }
 
 .right-content img {
-    border-radius: 15px; /* Rounded corners for the image */
-    width: 100%; /* Make the image responsive */
-    max-width: 50%; /* Limit the image width */
-    max-height: 300px; /* Adjust based on your design */
-    object-fit: cover; /* Cover the space without stretching */
+    max-height: 400px;
+    width: auto;
+    height: auto; /* Maintains the aspect ratio of the image */
+    object-fit: contain; /* This will cover the area without stretching the image */
+    border-radius: 20px;
+    transform: translateY(60px); /* Moves the image 20px down. Adjust the value as needed. */
+
 }
 
-/* Button styles */
-.button-reserve {
-    background: #495E57; /* Button background color */
-    color: white; /* Button text color */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: center;
     }
 
-    .left-content, .right-content {
-        width: 100%; /* Full width on smaller screens */
+    .left-content,
+    .right-content {
+        width: 100%;
+        text-align: center;
     }
+
 
     .right-content {
-        margin-top: 20px; /* Space between text and image on smaller screens */
+        margin-top: 20px; /* Adds spacing between the text content and image on smaller screens */
     }
 }
